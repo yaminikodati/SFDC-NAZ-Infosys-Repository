@@ -1,0 +1,123 @@
+<apex:page standardcontroller="Account" extensions="CreateActivationRequestExtension" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false" docType="html-5.0">
+     <!-- jQuery CDN -->
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- MomentJS CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+<!-- Important To Include ALJS init File-->
+ <script src="{!URLFOR($Resource.aljs, '/jquery/jquery.aljs-init.min.js')}"></script>
+<!-- ALJS Datepicker Module-->
+ <script src="{!URLFOR($Resource.aljs, '/jquery/jquery.aljs-datepicker.min.js')}"></script>
+ <style>
+        .requiredInput .requiredBlock, .requiredBlock {background-color: white;} 
+        .similar {
+              background-color: white;
+			  color: #16325c;
+			  border: 1px solid #d8dde6;
+			  border-radius: 4px;
+			  width: 200px;
+			  transition: border 0.1s linear, background-color 0.1s linear;
+			  display: inline-block;
+ 			  padding: 0 20px 0 16px; 
+			  line-height: 34px;
+ 			  min-height: calc(34px + 2px); 
+        }
+       
+    </style>
+    <script>
+//     $('selector').datepicker().on('changeDate',function(e) {
+//     $('selector').datepicker('hide');
+// });
+     </script>
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.slds,'slds/assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    </head>
+    <script type='text/javascript' src='/canvas/sdk/js/publisher.js'> </script> 
+    <script> 
+        function refreshFeed() { 
+        Sfdc.canvas.publisher.publish({name: "publisher.close",
+               payload:{ refresh:"true"}});
+            //Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : {feed:true}}); 
+        }
+    </script>
+                
+    
+    <body>
+    <div class="slds"> 
+    <apex:pageMessages id="msg" />
+    <div> 
+        <apex:form id="form"> 
+        
+            <apex:actionFunction action="{!createActReq}" name="createActReq" rerender="msg,form,out,re"  /> <!-- oncomplete="closeWindow();" -->
+        <apex:outputText rendered="{!flag}" id="re">
+            <script>
+            alert('Activation request created successfully');
+            Sfdc.canvas.publisher.publish({name: 'publisher.close', payload:{ refresh:true}}); 
+            sforce.one.navigateToSObject("{!parent.Id}","DETAIL"); // 
+            </script>
+        </apex:outputText>
+            <apex:outputPanel id="out" rendered="{!not flag}"> 
+                <br /> 
+                <c:LookupComponent SObject="{!theActReq}" Field="Account__c"></c:LookupComponent>
+<!--                     <div >Account :<apex:inputField styleClass="similar" value="{!theActReq.Account__c}" /> </div> styleClass="slds-input" -->
+ 				<c:LookupComponent SObject="{!theActReq}" Field="Contact__c"></c:LookupComponent>
+<!--                     <div >Contact :<apex:inputField value="{!theActReq.Contact__c}" styleClass="similar"/> </div> -->
+                    
+                
+                <div >Description :<apex:inputField value="{!theActReq.Description__c}"  styleClass="slds-input"/></div> <!-- style="width:538px;height:92px;margin-top:4px;" -->
+                
+                <div > 
+                    <div>Brand :</div><apex:inputField value="{!theActReq.Brand__c}" styleClass="slds-input"/>
+                    
+                    <div>Package :</div><apex:inputField value="{!theActReq.Package__c}" styleClass="slds-input"/>
+                    
+                </div> 
+                
+                  <div >Activation Date/Time: </div>
+<!--                   <apex:inputField value="{!theActReq.Activation_Date_Time__c}"  styleClass="slds-input" />   -->
+               <div>
+                <span>    <apex:input type="date" id="date" value="{!selectedDate}" styleclass="similar" ondblclick="window.close();"/> </span>&nbsp;&nbsp;&nbsp;
+                 <span> <apex:input type="time" id="time" value="{!selectedTime}" styleclass="similar" /> </span>
+                </div>
+               
+<!-- 		<apex:inputField value="{!theActReq.Activation_Date_Time__c}" showDatePicker="true" required="true"/> -->
+<!--      <apex:input type="datetime" id="date" value="{!demo}" styleclass="slds-input" /> -->
+                
+                <div>
+<!--                   <div>Assigned To :</div><apex:inputField value="{!theActReq.Assigned_To__c}" styleClass="similar"/> styleClass="slds-input" -->
+ 				<c:LookupComponent SObject="{!theActReq}" Field="Assigned_To__c"></c:LookupComponent>
+ 
+                </div>
+                
+                
+            </apex:outputPanel>
+            
+        </apex:form><br/>
+        <div class="slds-button-group" ><button type="button" onclick="createActReq();" id="addcasebutton" class="slds-button slds-button--neutral">Create Activation Request</button> 
+    </div>
+        
+    </div>  
+    </div>
+     
+    </body>
+		   <script>
+		var j$ = jQuery.noConflict();
+		var assetsLoc = "{!URLFOR($Resource.slds, '/slds')}";
+		  
+		//ALJS Initialization   
+		       
+		j$.aljsInit({
+		  assetsLocation: assetsLoc,
+		  scoped: true
+		});
+		   
+		j$(document).ready(function() {
+		 
+			
+		});
+		
+
+		</script>
+		
+		    </html>
+</apex:page>
