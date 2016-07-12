@@ -1,0 +1,20 @@
+pre dpeloyment activities
+
+create a global picklist sap type
+upload the static resources - 3
+create a custom button on account with the name MA_MapIt_a1Fm0000006U4UnEAK (Map_It)
+enable opportunity team settings
+create a quick action on US_Account layout
+create a global action New_Task
+remove add invitees from event page layout - quick action
+remove activation request from account page layout - quick action
+remove view data assessment permission from the package.xml file for admin profile
+
+post deployment activities
+
+create a quick action add invitees on event
+add it to the event page layout
+
+create a quick action activation request on accountadd it to accuount layout
+
+add lookup component and its controller
