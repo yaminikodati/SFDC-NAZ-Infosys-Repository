@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>WOD Salesforce1 UI &amp; Config for Pilot</fullName>
+  <description>For release related to basic SF1 configuration</description>
+  <!--
+- - - - - OTHER STEPS - - - - -
+
+STEP : Salesforce1 Settings
+
+Setup > Salesforce1 Settings > Device Access Settings >  
+Allow Salesforce1 to import Contacts from mobile device Contact lists.
+ = TRUE
+Setup > Salesforce1 Branding > 
+Brand Color = #980b1a
+Loading Page Color = #fff
+Setup > Salesforce1 Navigation > Navigation Menu Items: Enable the following order of Items:
+Feed
+Find Nearby Accounts
+Tasks
+Events
+Dashboards
+Smart Search Items
+Groups
+Approvals
+
+STEP : Chatter Group
+
+Create 1 Chatter Group for the Denver WOD
+Name = WOD - Denver
+Information.Title = Denver WSLR 10500
+Information.Body = &#39;WSLR10500.  Users are auto-assigned if they have 10500 as their Wholesaler Number&#39;
+Description = &#39;Group for all Denver WOD Employees to collaborate and share success!&#39;
+Owner = Dan Nolan
+
+STEP : Attached Note
+
+Batch ScheduleAutoFollow will run after the BatchRegionRosterUpdate class
+
+-->
+  <types>
+    <members>HE_UserTriggerHandler</members>
+    <members>ScheduleAutoFollowScheduler</members>
+    <members>ScheduleAutoFollow</members>
+    <members>SF1EventsInviteControllerTest</members>
+    <members>ScheduleAutoFollowTest</members>
+    <members>HE_ClientSideGoogleLocationAPI</members>
+    <members>SF1EventsInviteController</members>
+    <name>ApexClass</name>
+  </types>
+  <types>
+    <members>HE_ClientSideGoogleLocationAPI</members>
+    <members>SF1EventsInvite</members>
+    <name>ApexPage</name>
+  </types>
+  <types>
+    <members>HE_UserTrigger</members>
+    <name>ApexTrigger</name>
+  </types>
+  <types>
+    <members>Field_Sales_Collaboration</members>
+    <name>CustomApplication</name>
+  </types>
+  <types>
+    <members>US_Account_Target__c.Package_Group__c</members>
+    <members>US_Account_Target_Program__c.Pct_Acheivement__c</members>
+    <members>US_Account_Target__c.Channel__c</members>
+    <members>US_Account_Target_Program__c.Account_Target_Program__c</members>
+    <members>Contact.Contact_Notes__c</members>
+    <members>US_Account_Target_Program__c.Target_Program__c</members>
+    <members>US_Account_Target_Program__c.External_ID__c</members>
+    <members>US_Account_Target__c.Acheivement_Score__c</members>
+    <members>US_Account_Target_Program__c.Program_Target_Level__c</members>
+    <members>US_Account_Target_Program__c.Account__c</members>
+    <members>US_Account_Target__c.External_ID__c</members>
+    <members>US_Account_Target__c.WSLR_NBR__c</members>
+    <members>US_Account_Target__c.Target_Program__c</members>
+    <members>US_Account_Target_Program__c.Target_Program_Achieved__c</members>
+    <members>US_Account_Target__c.Wholesaler__c</members>
+    <members>US_Account_Target__c.Brand_Category__c</members>
+    <members>US_Account_Target_Program__c.Brand_Category__c</members>
+    <members>US_Account_Target__c.Account__c</members>
+    <members>US_Account_Target_Program__c.Achieved_Targets__c</members>
+    <members>US_Account_Target_Program__c.Count_of_Yellow_Flags__c</members>
+    <members>US_Account_Target__c.Complete__c</members>
+    <members>US_Account_Target_Program__c.Count_of_Red_Flags__c</members>
+    <members>US_Account_Target__c.Flag__c</members>
+    <members>US_Account_Target__c.Match_Key__c</members>
+    <members>User.Wholesaler_Number__c</members>
+    <members>US_Account_Target__c.SKU__c</members>
+    <members>US_Account_Target_Program__c.Channel__c</members>
+    <members>US_Account_Target__c.Brand_Package__c</members>
+    <members>US_Account_Target__c.WSLR_ASGND_CUST_NBR__c</members>
+    <name>CustomField</name>
+  </types>
+  <types>
+    <members>US_Account_Target_Program__c</members>
+    <members>US_Account_Target__c</members>
+    <name>CustomObject</name>
+  </types>
+  <types>
+    <members>StatusCompletedForCallSummary</members>
+    <name>Flow</name>
+  </types>
+  <types>
+    <members>Event-Event Layout</members>
+    <members>US_Account_Target__c-Account Target Layout</members>
+    <members>Account-US Mobile POC Layout</members>
+    <members>US_Account_Target_Program__c-Account Target Program Layout</members>
+    <members>Contact-US Mobile Contact</members>
+    <members>Account-Account Layout</members>
+    <name>Layout</name>
+  </types>
+  <types>
+    <members>WSLR User</members>
+    <name>Profile</name>
+  </types>
+  <types>
+    <members>US_Account_Target__c.Assortment</members>
+    <members>US_Account_Target_Program__c.Assortment</members>
+    <name>RecordType</name>
+  </types>
+  <types>
+    <members>Team_4_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_12</members>
+    <members>Denver_Team_Lead_2</members>
+    <members>Team_12_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_6</members>
+    <members>Team_6_Sales_Rep_Denver</members>
+    <members>Denver_Mgmt</members>
+    <members>Denver_Team_Lead_7</members>
+    <members>Team_13_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_13</members>
+    <members>Team_9_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_1</members>
+    <members>Denver_Team_Lead_5</members>
+    <members>Team_11_Sales_Rep_Denver</members>
+    <members>Team_5_Sales_Rep_Denver</members>
+    <members>Team_1_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_8</members>
+    <members>Denver_Team_Lead_10</members>
+    <members>Denver_Team_Lead_4</members>
+    <members>Denver_Team_Lead_9</members>
+    <members>Colorado_SD</members>
+    <members>Team_7_Sales_Rep_Denver</members>
+    <members>Team_10_Sales_Rep_Denver</members>
+    <members>Denver_Team_Lead_11</members>
+    <members>Denver_Team_Lead_3</members>
+    <members>Team_3_Sales_Rep_Denver</members>
+    <members>Team_8_Sales_Rep_Denver</members>
+    <members>Team_2_Sales_Rep_Denver</members>
+    <name>Role</name>
+  </types>
+  <types>
+    <members>SF1OrgResources</members>
+    <members>slds</members>
+    <name>StaticResource</name>
+  </types>
+  <types>
+    <members>Contact.RequiredPhoneOrEmail</members>
+    <name>ValidationRule</name>
+  </types>
+  <version>36.0</version>
+</Package>
