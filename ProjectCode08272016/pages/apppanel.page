@@ -1,0 +1,104 @@
+<apex:page controller="apppanel" sidebar="false">
+<style>
+.applabel {
+    font-family: Arial,Helvetica,Sans-serif;
+    font-size: 16px;
+    color: #696e71;
+    background-color: #e8eaeb;
+    height: 48px;
+    padding-top: 14px;
+    padding-left: 15px;
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.app {
+    width: 234px;
+    margin: 20px;
+    border: 1px solid #cfd4d9;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 1px 1px 1px #d7d6d5;
+    -moz-box-shadow: 0 1px 1px 1px #d7d6d5;
+    -webkit-box-shadow: 0 1px 1px 1px #d7d6d5;
+    float: left;
+}
+.tile-img-inner {
+    overflow: hidden;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+    width: 200px;
+    height: 125px;}
+.tile-img {
+    margin-left: 17px;
+    margin-right: 17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: table;
+    table-layout: fixed;
+    width: 200px;
+    height: 125px;
+}
+.myApps {
+    font-family: Arial,Helvetica,Sans-serif;
+    font-size: 32px;
+    color: #980b1a;
+    margin-left: 20px;
+}
+</style>
+
+<div class="myApps">My Apps</div>
+
+ <div style="padding-left:40px;">
+            <a styleClass=" slds-card" id="theImage" href="https://naz--uat--c.cs22.visual.force.com/apex/ABS_WholesalerAccountDetail?sfdc.tabName=01r170000000YnX">
+                <div class="app" id="SAP">
+                    <div class="tile-img">
+                    <span class="tile-img-inner">
+                    <img src="https://naz--uat--c.cs22.content.force.com/servlet/servlet.ImageServer?id=01517000000JLbv&oid=00D17000000BBLz&lastMod=1469202786000" />
+                    </span>
+                    </div>
+                    <div class="applabel">
+                    <span>SAP</span>
+                    </div>
+                </div>
+            </a>
+            <div class="arrow">
+            <a styleClass=" slds-card" href="https://naz--uat--c.cs22.visual.force.com/apex/ABS_WholesalerAccountDetail?sfdc.tabName=01r170000000YnX">
+            </a>
+            </div>
+            
+        </div>
+
+
+<div class="slds" style="padding-left:40px;">  
+<apex:stylesheet value="/resource/1465852176000/lds_sheet"/>
+    <apex:repeat value="{!Records}" var="Record">
+
+        <div>
+            <a styleClass=" slds-card" id="theImage" href="{!Record.StartUrl}">
+                <div class="app" id="SAP">
+                    <div class="tile-img">
+                    <span class="tile-img-inner">
+                    <img src="{!Record.LogoUrl}" />
+                    </span>
+                    </div>
+                    <div class="applabel">
+                    <span>{!Record.Label}</span>
+                    </div>
+                </div>
+            </a>
+            <div class="arrow">
+            <a styleClass=" slds-card" href="{!Record.StartUrl}">
+            </a>
+            </div>
+            
+        </div>                                   
+         </apex:repeat>
+        
+</div>
+</apex:page>

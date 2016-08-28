@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>POC_RecrdType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>POC RecrdType</shortDescription>
+        <value>POC</value>
+    </labels>
+    <labels>
+        <fullName>WholeSaler_RecrdType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WholeSaler RecrdType</shortDescription>
+        <value>Wholesaler</value>
+    </labels>
+</CustomLabels>

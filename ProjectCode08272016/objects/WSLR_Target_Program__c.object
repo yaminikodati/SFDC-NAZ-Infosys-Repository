@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Target_Level__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the level of achievement required for the Accounts that participate in this program? e.g. 13, 4, 3</inlineHelpText>
+        <label>Account Target Level</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Achievement_Goal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What percentage of Account Adherence should this wholesaler achieve for this Program?</inlineHelpText>
+        <label>Achievement % Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Brand_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand Category</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <inlineHelpText>WSLR_NBR+CHANNEL+BRANDCATEGORY</inlineHelpText>
+        <label>External ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Target_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Target Type</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WSLR_NBR__c</fullName>
+        <externalId>false</externalId>
+        <label>WSLR_NBR</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wholesaler__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>To which wholesaler is this target program applied?</inlineHelpText>
+        <label>Wholesaler</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>WSLR Target Programs</relationshipLabel>
+        <relationshipName>WSLR_Target_Programs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+</CustomObject>
